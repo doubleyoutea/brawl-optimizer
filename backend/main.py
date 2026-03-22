@@ -1,7 +1,10 @@
 import math
+import os
 import requests
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+API_KEY = os.environ.get("API_KEY", "")
 
 app = FastAPI()
 
@@ -12,7 +15,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjY0NzQ0Yjc2LTQ4MDItNGFlYS1hMGRjLWQ4MjU0M2E2YTlmYyIsImlhdCI6MTc3NDEyNzM5MSwic3ViIjoiZGV2ZWxvcGVyLzliYjU2NzAzLTBlZWItYWYyNy1kMTViLWI1MDk3OWM4N2Y0MyIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiODQuNzEuMjQzLjE4NiJdLCJ0eXBlIjoiY2xpZW50In1dfQ.AdRcs9OECS2tgQeGqwtwabcL0Kfh88l39tM2nwFHc5W4QIKIT1y8JdAB7jPCMHwk1ZCcsA2-mHms96q2X4nTOA"
 BASE_URL = "https://api.brawlstars.com/v1"
 
 headers = {
