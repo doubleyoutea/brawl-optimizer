@@ -132,7 +132,7 @@ function App() {
     setData(null)
 
     try {
-      const response = await fetch(`http://localhost:8000/player/${tag}`)
+      const response = await fetch(`https://brawl-optimizer-backend.onrender.com/player/${tag}`)
       if (!response.ok) throw new Error("Player not found — check your tag")
       const json = await response.json()
       setData(json)
